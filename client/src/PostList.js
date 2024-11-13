@@ -19,16 +19,14 @@ const PostList = () => {
   const renderedPosts = Object.values(posts).map((post) => {
     return (
       <div
-        className="card"
-        style={{ width: "30%", marginBottom: "20px" }}
-        key={post.id}
-      >
-        <div className="card-body">
-          <h3>{post.title}</h3>
-          <CommentList postId={post.id} />
-          <CommentCreate postId={post.id} />
-        </div>
+      key={post.id}
+    >
+      <div className="space-y-4">
+        <h3 className="text-xl font-semibold text-gray-800">{post.title}</h3>
+        <CommentList postId={post.id} />
+        <CommentCreate postId={post.id} />
       </div>
+    </div>
     );
   });
 
